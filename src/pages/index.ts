@@ -1,2 +1,2 @@
-export * from './MainPage.tsx';
-export * from './BookPage.tsx';
+export * from './SearchPage/SearchPage.tsx';
+export * from './BookPage/BookPage.tsx';

@@ -1,5 +1,5 @@
-import { Header } from './components';
-import { AppRouter } from './AppRouter.tsx';
+import { Header } from '@/components';
+import { AppRouter } from '@/AppRouter.tsx';
 
 function App() {
   return (

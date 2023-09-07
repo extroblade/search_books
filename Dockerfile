@@ -1,7 +1,13 @@
 FROM node:18-alpine
-WORKDIR /test-task/
-COPY public/ /test-task/public
-COPY src/ /test-task/src
-COPY package.json /test-task/
-RUN yarn
-CMD ["yarn", "dev"]
+
+EXPOSE 3000
+
+WORKDIR /react-vite-app
+
+COPY package.json .
+
+RUN yarn install
+
+COPY . .
+#docker image build -t search_books:latest .
+CMD [ "yarn","dev"]

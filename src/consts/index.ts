@@ -1,4 +1,14 @@
-export const categories = ['all', 'art', 'biography', 'computers', 'history', 'medical', 'poetry'];
+import { CategoryVariants, SortVariants } from '@/types';
 
-export const sorts = ['relevance', 'newest'];
+export const categories: CategoryVariants[] = [
+  'all',
+  'art',
+  'biography',
+  'computers',
+  'history',
+  'medical',
+  'poetry',
+];
+
+export const sorts: SortVariants[] = ['relevance', 'newest'];
 export const PAGINATION_LIMIT = 30;

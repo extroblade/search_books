@@ -1,9 +1,9 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { MainPage } from './pages/MainPage.tsx';
-import { BookPage } from './pages/BookPage.tsx';
+import { SearchPage } from '@/pages';
+import { BookPage } from '@/pages';
 
 const routes = [
-  { path: '/', element: <MainPage /> },
+  { path: '/', element: <SearchPage /> },
   { path: '/book/:id', element: <BookPage /> },
   { path: '*', element: <Navigate to={'/'} replace /> },
 ];

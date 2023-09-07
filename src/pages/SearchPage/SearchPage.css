@@ -1,0 +1,4 @@
+.search-page__results {
+    display: flex;
+    flex-direction: column;
+}

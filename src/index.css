@@ -3,15 +3,15 @@
   line-height: 1.5;
   font-weight: 400;
   height: 100%;
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: #14141e;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --color-card-bg: #1c2734;
+  --color-font-secondary: #b5cfd7;
 }
 
 * {
@@ -21,8 +21,9 @@
 }
 
 a {
-  font-weight: 500;
   all: unset;
+  font-weight: 500;
+  cursor: pointer;
 }
 html {
   overflow: auto;
@@ -33,6 +34,7 @@ html {
 body {
   margin: 0;
   width: 100%;
+  padding: 0 10px;
 }
 
 #root {
@@ -44,47 +46,29 @@ body {
   }
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  margin-top: 5px;
+  background-color: #414149;
+  cursor: pointer;
+  color: white;
+  transition: border-color 0.25s;
 }
-
-.search__panel {
-  display: flex;
-  flex-direction: column;
-  max-width: 40vw;
-  width: 100%;
-  @media screen and (max-width: 720px) {
-    max-width: 90vw;
-  }
+button:hover {
+  border-color: #646cff;
 }
-
-.search__button {
-  border-radius: 20px;
-  width: 30px;
-  height: 30px;
-  &:hover {
-    & svg {
-      fill: #646cff;
-    }
-  }
-
-  & svg {
-    width: 15px;
-    height: 15px;
-    fill: white;
-  }
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
 h1 {
   text-align: center;
-}
-
-.results {
-  display: flex;
-  flex-direction: column;
 }
 
 .grid {
@@ -100,50 +84,15 @@ h1 {
   }
 }
 
-.card {
-  border: 0;
-  background-color: #504747;
-  padding: 20px;
-  border-radius: 12px;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 370px;
-  overflow: hidden;
-  font-weight: 600;
-}
-
-.card__text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: start;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-.book-page {
+.flex {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  @media screen and (max-width: 720px) {
-    flex-direction: column;
-  }
-}
-
-img {
-  border-radius: 0 12px 12px 0;
-  position: relative;
-  width: 128px;
-  height: 187px;
-  object-fit: cover;
-  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 input,
@@ -154,18 +103,16 @@ select {
   border-radius: 12px;
 }
 
-.categories {
-  color: rgb(128, 128, 128);
-}
-
-label {
+img {
+  border-radius: 0 12px 12px 0;
   position: relative;
-}
-label > button {
-  position: absolute;
-  right: 3px;
-  top: -3px;
-  padding: 4px;
+  width: 128px;
+  height: 187px;
+  min-width: 128px;
+  min-height: 187px;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 img:after {
@@ -175,8 +122,8 @@ img:after {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 128px;
+  height: 187px;
   background:
     linear-gradient(-75deg, transparent 30%, #3b3b3b 50%, transparent 70%) 0 0 / 200% 100%,
     #100f0f;
@@ -190,44 +137,5 @@ img:after {
   }
   100% {
     background-position: -200% 0;
-  }
-}
-
-.book-page__image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }

@@ -37,11 +37,12 @@ export const SearchPage = () => {
   };
 
   if (!query) return <h1>enter query</h1>;
-  if ((!isFetching && !data?.totalItems) || error) return <h1>nothing found</h1>;
+  if (!isFetching && !data?.totalItems) return <h1>nothing found</h1>;
   return (
     <div className={'search-page__results'}>
       {!isFetching && data?.totalItems && <h2> found {data?.totalItems} results:</h2>}
       {isFetching && <Loader />}
+      {error ? <div>{JSON.stringify(error)}</div> : ''}
       {data && (
         <div className={'grid'}>
           {books?.length &&

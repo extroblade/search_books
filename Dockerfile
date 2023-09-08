@@ -1,13 +1,14 @@
 FROM node:18-alpine
 
-EXPOSE 3000
-
-WORKDIR /react-vite-app
+WORKDIR /app
 
 COPY package.json .
 
+COPY . .
+
 RUN yarn install
 
-COPY . .
+
+EXPOSE 5173
 #docker image build -t search_books:latest .
 CMD [ "yarn","dev"]

@@ -25,5 +25,5 @@
   },
   "moduleResolution": "nodenext",
 
-  "include": ["src"],
+  "include": ["src"]
 }

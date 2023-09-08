@@ -1,13 +1,13 @@
 .book-page {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-top: 2rem;
-    padding: 2rem;
-    background-color: #5e6172;
-    border-radius: 12px;
-    border: 1px solid white;
-    @media screen and (max-width: 1160px) {
-        flex-direction: column;
-    }
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #5e6172;
+  border-radius: 12px;
+  border: 1px solid white;
+  @media screen and (max-width: 1160px) {
+    flex-direction: column;
+  }
 }

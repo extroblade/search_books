@@ -104,6 +104,7 @@ select {
 }
 
 img {
+    font-size: 0;
   border-radius: 0 12px 12px 0;
   position: relative;
   width: 128px;

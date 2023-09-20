@@ -2,7 +2,7 @@ import { FC, JSX, ChangeEvent, useRef, useState, FormEvent } from 'react';
 import { categories, sorts } from '@/consts';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAppDispatch, setQuery, setSort, setCategory } from '@/store';
-import {CategoryVariants, SortVariants} from '@/types';
+import { CategoryVariants, SortVariants } from '@/types';
 import './Header.css';
 
 export const Header: FC = (): JSX.Element => {

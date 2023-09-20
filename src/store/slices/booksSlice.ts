@@ -1,6 +1,6 @@
-import {CategoryVariants, iFilters, SortVariants} from '@/types';
+import { CategoryVariants, iFilters, SortVariants } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {RootState} from "@/store";
+import { RootState } from '@/store';
 
 const initialState: Omit<iFilters, 'id'> = {
   query: '',

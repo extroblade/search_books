@@ -2,11 +2,11 @@ import { FC, JSX, ChangeEvent, useRef, useState, FormEvent } from 'react';
 import { categories, sorts } from '@/consts';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAppDispatch, setQuery, setSort, setCategory } from '@/store';
-import { SortVariants } from '@/types';
+import {CategoryVariants, SortVariants} from '@/types';
 import './Header.css';
 
 export const Header: FC = (): JSX.Element => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [sort, setSortValue] = useState<SortVariants>(sorts[0]);
@@ -14,19 +14,20 @@ export const Header: FC = (): JSX.Element => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(setQuery(inputRef.current.value));
+
+    dispatch(setQuery(inputRef?.current?.value || ''));
     navigate('/');
   };
 
   const changeSort = (e: ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
-    const newValue = e.target.value;
+    const newValue: SortVariants = e.target.value as SortVariants;
     setSortValue(() => newValue);
     dispatch(setSort(newValue));
   };
   const changeCategory = (e: ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
-    const newValue = e.target.value;
+    const newValue: CategoryVariants = e.target.value as CategoryVariants;
     setCategoryValue(() => newValue);
     dispatch(setCategory(newValue));
   };

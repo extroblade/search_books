@@ -34,7 +34,7 @@ export const Book: FC<{ book: iBook }> = ({ book }): JSX.Element => {
               <h3>authors:</h3>
               <div className={'book__authors'}>
                 {authors?.length &&
-                  authors.map((author: string[]) => (
+                  authors.map((author: string) => (
                     <span className={'book__author'} key={author}>
                       {author}
                     </span>

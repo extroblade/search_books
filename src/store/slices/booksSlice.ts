@@ -1,5 +1,6 @@
-import { iFilters } from '@/types';
+import {CategoryVariants, iFilters, SortVariants} from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {RootState} from "@/store";
 
 const initialState: Omit<iFilters, 'id'> = {
   query: '',
@@ -15,10 +16,10 @@ const filtersSlice = createSlice({
     setQuery(state, action: PayloadAction<string>) {
       state.query = action.payload;
     },
-    setSort(state, action: PayloadAction<string>) {
+    setSort(state, action: PayloadAction<SortVariants>) {
       state.sort = action.payload;
     },
-    setCategory(state, action: PayloadAction<string>) {
+    setCategory(state, action: PayloadAction<CategoryVariants>) {
       state.category = action.payload;
     },
     setStartIndex(state, action: PayloadAction<number>) {
@@ -28,5 +29,5 @@ const filtersSlice = createSlice({
 });
 
 export const { setQuery, setSort, setCategory, setStartIndex } = filtersSlice.actions;
-export const selectFilters = (state) => state.filtersReducer;
+export const selectFilters = (state: RootState) => state.filtersReducer;
 export default filtersSlice;

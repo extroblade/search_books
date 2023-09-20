@@ -50,7 +50,7 @@ export const SearchPage = () => {
         </div>
       )}
       {isFetching && books?.length ? <Loader /> : ''}
-      {!isFetching && data?.totalItems >= startIndex + PAGINATION_LIMIT && (
+      {!isFetching && data?.totalItems && data.totalItems >= startIndex + PAGINATION_LIMIT && (
         <button disabled={isLoading} onClick={loadHandle}>
           load more
         </button>
